@@ -1,0 +1,17 @@
+<%- include('partials/header') %>
+
+<h1>Home</h1>
+<p><%=firstContent%></p>
+
+<% posts.forEach(function(post){ %>
+    <% var title = post.title %>
+    <% var content = post.textArea %>
+    <% var length=120; %>
+    <% var truncatedString=content.substring(0, length); %>
+    <% titleReady = title %>
+    <% contentReady = content %>
+    <h1><%= titleReady %></h1>
+    <p><%= truncatedString  %> .......<a href="/compose/<%=titleReady%>">Read More</a></p>
+<% }) %>
+
+<%- include('partials/footer') %>
